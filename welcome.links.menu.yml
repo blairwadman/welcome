@@ -1,0 +1,6 @@
+welcome.demo:
+  title: 'Welcome'
+  route_name: welcome.welcome_controller_welcome
+  description: 'Welcome message'
+  parent: main
+  menu_name : main
