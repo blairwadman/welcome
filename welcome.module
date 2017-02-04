@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_user_login().
+ */
+function welcome_user_login($account) {
+  $name = \Drupal::currentUser()->getDisplayName();
+  drupal_set_message(t('Hello @name, thank you for logging in and welcome!', array('@name' => $name)));
+}
