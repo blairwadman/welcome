@@ -21,10 +21,10 @@ class WelcomeController extends ControllerBase {
    * @return string
    *   Return Hello string.
    */
-  public function welcome() {
+  public function welcome($name) {
     return array(
       '#type' => 'markup',
-      '#markup' => $this->t('Hello world')
+      '#markup' => $this->t('Hello @name', array('@name' => $name))
     );
   }
 
