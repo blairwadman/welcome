@@ -15,3 +15,10 @@ welcome.admin_settings_form:
     _permission: 'access administration pages'
   options:
     _admin_route: TRUE
+welcome.message:
+  path: 'welcome/message'
+  defaults:
+    _controller: '\Drupal\welcome\Controller\WelcomeController::message'
+    _title: 'Welcome Message'
+  requirements:
+    _permission: 'custom path'
