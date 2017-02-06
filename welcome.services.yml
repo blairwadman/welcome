@@ -1,0 +1,3 @@
+services:
+  welcome.message_generator:
+    class: Drupal\welcome\Messages\MessageGenerator
