@@ -16,9 +16,11 @@ class WelcomeBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $name = \Drupal::currentUser()->getDisplayName();
+    $token = \Drupal::token();
+    $message = $token->replace($this->configuration['welcome_message'], array('user' => \Drupal::currentUser()));
+
     return array(
-      '#markup' => $this->t('@welcome_message', array('@welcome_message' => $this->configuration['welcome_message'])),
+      '#markup' => $this->t($message),
     );
   }
 
