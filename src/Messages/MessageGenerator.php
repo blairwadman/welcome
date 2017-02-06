@@ -5,7 +5,18 @@ namespace Drupal\welcome\Messages;
 
 class MessageGenerator
 {
+  private $params;
+
+  public function __construct($params)
+  {
+    $this->params = $params;
+  }
+
   public function getMessage() {
-    return 'Hello and welcome';
+    $params = $this->params;
+    $message_key = array_rand($params);
+    $message = $params[$message_key];
+
+    return $message;
   }
 }
