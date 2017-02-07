@@ -8,3 +8,8 @@ services:
     class: Drupal\welcome\Messages\MessageGenerator
     arguments:
       - %welcome.messages%
+  welcome.message_listeners:
+    class: Drupal\welcome\Messages\MessageListener
+    arguments: []
+    tags:
+      - { name: event_subscriber }
