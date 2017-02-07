@@ -9,7 +9,12 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class MessageListener implements EventSubscriberInterface
 {
   public function onKernelRequest(GetResponseEvent $event) {
-    ksm($event);
+    $request = $event->getRequest();
+    $message = $request->query->get('message');
+
+    if ($message) {
+      drupal_set_message('there is a message');
+    }
   }
 
   public static function getSubscribedEvents()
